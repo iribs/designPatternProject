@@ -5,8 +5,6 @@
 #include "list"  
 using namespace std;
 
-
-
 void showTree(IFile*root, int level)
 { 
 	if (root == NULL)
@@ -51,13 +49,23 @@ void main()
 
 	File *file1 = new File("file1");
 	File *file2 = new File("file2");
+	File *file3 = new File("file3");
 
 	root->add(dir1);
-	root->add(file1);
+	root->add(dir2);
+	dir1->add(file1);
 	dir1->add(file2);
-	dir1->add(dir2);
+	dir2->add(file3);
 
 	list<IFile*> *list1 = root->getChild();
+
+	showTree(root, 0);
+
+	cout << endl;
+
+	dir1->remove(file1);
+
+	list<IFile*> *list2 = root->getChild();
 
 	showTree(root, 0);
 
