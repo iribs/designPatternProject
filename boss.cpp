@@ -12,6 +12,11 @@ void Boss::Attach(Observer *aObserver)
 	observerList.push_back(aObserver);
 }
 
+void Boss::Detach(Observer *aObserver)
+{
+	observerList.remove(aObserver);
+}
+
 void Boss::SetContent(char *aContent)
 {
 	content = aContent;

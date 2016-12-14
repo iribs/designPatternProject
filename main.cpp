@@ -25,6 +25,8 @@ int main()
 	boss.SetContent(content);
 	boss.Notify();
 
+	boss.Detach(sub1);
+	boss.Notify();
 
 	std::system("PAUSE");
 

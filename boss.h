@@ -10,6 +10,7 @@ class Boss : public Subject
 public:
 	Boss();
 	virtual void Attach(Observer *aObserver);
+	virtual void Detach(Observer *aObserver);
 	virtual void Notify();
 	virtual char *GetContent() const;
 	virtual void SetContent(char *aContent);
