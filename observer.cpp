@@ -76,6 +76,15 @@ void ConcreteSubject::Detach(Observer *pObserver)
 	m_ObserverList.remove(pObserver);
 }
 
+void ConcreteSubject::Notify()
+{
+	std::list<Observer *>::iterator it = m_ObserverList.begin();
+	while (it != m_ObserverList.end())
+	{
+		(*it)->Update(m_iState);
+		++it;
+	}
+}
 
 int main()
 {
@@ -104,4 +113,6 @@ int main()
 	delete pObserver;
 	delete pObserver2;
 	delete pSubject;
+	
+	
 }
