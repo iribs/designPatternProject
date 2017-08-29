@@ -1,4 +1,4 @@
-// observer.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// observer.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -76,15 +76,6 @@ void ConcreteSubject::Detach(Observer *pObserver)
 	m_ObserverList.remove(pObserver);
 }
 
-void ConcreteSubject::Notify()
-{
-	std::list<Observer *>::iterator it = m_ObserverList.begin();
-	while (it != m_ObserverList.end())
-	{
-		(*it)->Update(m_iState);
-		++it;
-	}
-}
 
 int main()
 {
